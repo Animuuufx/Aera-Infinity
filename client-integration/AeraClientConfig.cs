@@ -7,8 +7,8 @@ public class AeraClientConfigData
 {
     public bool UsePrivateServer = true;
     public string ApiBaseUrl = "http://217.61.240.140:6678/";
-    public string AssetBundleBaseUrl = "https://infinity.aq.com/game/assetbundles/windows/";
-    public bool FlatAssetBundlePaths = false;
+    public string AssetBundleBaseUrl = "http://217.61.240.140:6678/gamefiles/assetbundles/windows/";
+    public bool FlatAssetBundlePaths = true;
     public bool EnforceClientVersion = false;
     public bool StartFullscreen = true;
 }
@@ -46,7 +46,7 @@ public static class AeraClientConfig
         }
 
         if (UsePrivateServer)
-            Debug.Log("Aera Infinity API: " + ApiBaseUrl);
+            Debug.Log("Aera Infinity LOCAL API: " + ApiBaseUrl + " | LOCAL bundles: " + AssetBundleBaseUrl);
     }
 
     private static void EnsureLoaded()
