@@ -1,5 +1,9 @@
 Repository: https://github.com/drathaxie/InfinityServer
-Track: main
-Policy: Aera-Infinity stores only Aera-owned integration/overlay code. The full upstream source is cloned separately by the installer.
-Verified main commit on 2026-09-28: b293284ffbbd0bf9b4b9f0fb40a2ef261f7ab0fd
-Note: claude/remote-control-7e47b5 had a later-dated commit but was 12 commits behind main and diverged, so it is not used as the base.
+Track: latest complete main branch
+Verified baseline during this integration: b293284ffbbd0bf9b4b9f0fb40a2ef261f7ab0fd
+
+Aera local-data policy:
+- upstream code is used as the protocol/gameplay engine only
+- upstream seed/world/catalog data is disabled while AERA_LOCAL_DATA_ONLY=1
+- unknown monsters/bundles/soundtracks are NOT fetched from AE
+- Aera MySQL + AERA_GAMEFILES_ROOT are authoritative
