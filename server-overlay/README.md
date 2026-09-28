@@ -1,17 +1,23 @@
-# Server overlay
+# Aera Infinity local-data overlay v0.2.1
 
-This folder contains only the Aera-owned integration layer for drathaxie/InfinityServer.
+This overlay uses the current complete `drathaxie/InfinityServer` `main` line as the protocol/gameplay engine, but **does not use its captured AQW Infinity world/catalog as Aera content**.
 
-The upstream emulator is not vendored into this repository. Run the installer to clone the latest complete upstream main checkout separately and apply the Aera changes.
+With `AERA_LOCAL_DATA_ONLY=1`:
 
-Normal installation does not require Administrator. Elevation is only useful if you want the installer to add Windows Firewall rules for TCP 6677 and 6678.
+- upstream `seed.run()` is disabled;
+- Aera's MySQL database is synced into the runtime DB before startup;
+- old seeded runtime world/catalog/account rows are removed before each sync;
+- monster, bundle and soundtrack lookups never learn missing content from AE;
+- local `.unity3d` files are served from `AERA_GAMEFILES_ROOT`;
+- missing local files return 404 instead of silently using the live CDN;
+- the initial map defaults to `battleon`.
 
-Requirements:
+Normal installation does not require Administrator.
 
-- Git available in the same PowerShell session
-- Python 3.12+
-- Windows 10/11 or Windows Server
+Requirements: Git in the current PowerShell session, Python 3.12+, and access to the existing Aera MySQL/database and gamefiles.
 
-Run from this folder with PowerShell:
+Run:
 
-powershell -ExecutionPolicy Bypass -File .\INSTALL_AERA_INFINITYSERVER.ps1
+`powershell -ExecutionPolicy Bypass -File .\INSTALL_AERA_INFINITYSERVER.ps1`
+
+The current Aera client integration is **v2.3.1 LocalDataOnly**.
