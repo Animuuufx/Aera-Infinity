@@ -1,15 +1,14 @@
-# Aera Unity client integration
+# Aera Unity client — LocalDataOnly
 
-This project uses the Aera Unity client directly against the InfinityServer-compatible API/socket protocol.
+Use the **Aera Unity project**, not a redirected stock AQW Infinity executable.
 
-It does not require the stock AQW Infinity executable, Doorstop, or InfinityLoader redirection.
+Current integration line: **v2.3.1 LocalDataOnly**.
 
-Current endpoints:
+- API: `http://217.61.240.140:6678/`
+- Game TCP: returned by the Aera API; default `217.61.240.140:6677`
+- Asset bundles: `http://217.61.240.140:6678/gamefiles/assetbundles/windows/`
+- `FlatAssetBundlePaths=true`
 
-- API: http://217.61.240.140:6678/
-- Game socket: returned by the API as 217.61.240.140:6677
-- Versioned asset bundles: https://infinity.aq.com/game/assetbundles/windows/
+A database filename such as `monsters/46637_draconianwater.unity3d` is requested directly from Aera's local gamefile HTTP route. It is no longer configured to load bundles from `infinity.aq.com`.
 
-Only Aera-owned configuration/integration code is stored here. The full Unity project and third-party/decompiled game sources are intentionally not copied into this public repository.
-
-Current Aera client integration line: v2.3.0 InfinityServerNative.
+Missing local files fail locally with HTTP 404; LocalDataOnly mode has no silent AE CDN fallback.
