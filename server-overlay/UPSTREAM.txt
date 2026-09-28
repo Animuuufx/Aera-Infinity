@@ -1,0 +1,5 @@
+Repository: https://github.com/drathaxie/InfinityServer
+Track: main
+Policy: Aera-Infinity stores only Aera-owned integration/overlay code. The full upstream source is cloned separately by the installer.
+Verified main commit on 2026-09-28: b293284ffbbd0bf9b4b9f0fb40a2ef261f7ab0fd
+Note: claude/remote-control-7e47b5 had a later-dated commit but was 12 commits behind main and diverged, so it is not used as the base.
