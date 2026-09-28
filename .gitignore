@@ -1,0 +1,39 @@
+# Local runtime / upstream checkout
+runtime/
+AeraInfinityServer/
+InfinityServer/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local configuration / secrets
+.env
+*.env
+AERA_ENV.bat
+*.pem
+*.key
+
+# Databases / captures / logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.jsonl
+captures/
+data/private/
+
+# Unity generated folders
+Library/
+Temp/
+Obj/
+Logs/
+Build/
+Builds/
+
+# Archives / generated artifacts
+*.zip
+*.7z
+*.rar
