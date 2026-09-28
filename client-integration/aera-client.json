@@ -1,8 +1,8 @@
 {
   "UsePrivateServer": true,
   "ApiBaseUrl": "http://217.61.240.140:6678/",
-  "AssetBundleBaseUrl": "https://infinity.aq.com/game/assetbundles/windows/",
-  "FlatAssetBundlePaths": false,
+  "AssetBundleBaseUrl": "http://217.61.240.140:6678/gamefiles/assetbundles/windows/",
+  "FlatAssetBundlePaths": true,
   "EnforceClientVersion": false,
   "StartFullscreen": true
 }
